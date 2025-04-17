@@ -1,0 +1,6 @@
+﻿DbConnector.obj : error LNK2019: ссылка на неразрешенный внешний символ PQconnectdb в функции "public: void __cdecl DbConnector::creatConn(char const *)" (?creatConn@DbConnector@@QEAAXPEBD@Z).
+DbConnector.obj : error LNK2019: ссылка на неразрешенный внешний символ PQfinish в функции "public: void __cdecl DbConnector::creatConn(char const *)" (?creatConn@DbConnector@@QEAAXPEBD@Z).
+DbConnector.obj : error LNK2019: ссылка на неразрешенный внешний символ PQstatus в функции "public: void __cdecl DbConnector::creatConn(char const *)" (?creatConn@DbConnector@@QEAAXPEBD@Z).
+DbConnector.obj : error LNK2019: ссылка на неразрешенный внешний символ PQexec в функции "public: int __cdecl DbConnector::exec(char const *)" (?exec@DbConnector@@QEAAHPEBD@Z).
+DbConnector.obj : error LNK2019: ссылка на неразрешенный внешний символ PQntuples в функции "public: int __cdecl DbConnector::exec(char const *)" (?exec@DbConnector@@QEAAHPEBD@Z).
+C:\Users\admin\source\repos\kyrsovaia\x64\Debug\kyrsovaia.exe : fatal error LNK1120: неразрешенных внешних элементов: 5
