@@ -19,20 +19,21 @@
 class DbConnector {
     static DbConnector* current;
     static int count;
-    DbConnector();
+    DbConnector(std::string &&host, std::string &&nameUsser, std::string &&paswword);
     sql::mysql::MySQL_Driver* driver;
     sql::Connection* con;
     sql::Statement* stmt;
     sql::ResultSet* res;
-
+    bool isConnect;
 
 public:
     DbConnector(DbConnector* s) = delete;
-    static DbConnector* getInstance();
+    static DbConnector* getInstance(std::string &&host, std::string &&nameUsser, std::string &&paswword);
     ~DbConnector();
-    void creatConn(std::string host, std::string nameUsser, std::string paswword, std::string nameDb);
-    void request(std::string sql);
+    void request(std::string &&sql, std::string &&nameDb);
     sql::ResultSet* getRes();
+    bool getIsConnect();
+    
 };
 
 

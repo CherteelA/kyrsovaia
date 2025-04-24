@@ -1,0 +1,17 @@
+﻿  test.cpp
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\DbConnector.cpp(41,15): warning C4834: удаление возвращаемого значения функции с атрибутом [[nodiscard]]
+  (компиляция исходного файла "/test.cpp")
+  
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\DbConnector.cpp(62,19): warning C4834: удаление возвращаемого значения функции с атрибутом [[nodiscard]]
+  (компиляция исходного файла "/test.cpp")
+  
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(59,10): warning C4091: : пропускается слева от "std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>", когда ни одна переменная не объявлена
+  (компиляция исходного файла "/test.cpp")
+  
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(68,1): warning C4715: DepartingPassenger::checkInPassenger: значение возвращается не при всех путях выполнения
+  Test.vcxproj -> C:\Users\admin\source\repos\kyrsovaia\x64\Release\Test.exe
+  C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\libcrypto-3-x64.dll
+  C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\libssl-3-x64.dll
+  C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\mysqlcppconn-10-vs14.dll
+  C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\mysqlcppconnx-2-vs14.dll
+  Скопировано файлов: 4.
