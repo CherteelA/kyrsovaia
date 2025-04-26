@@ -7,6 +7,8 @@
 #define KYRSOVAIA_PASSENGER_H
 #include <iostream>
 #include <string>
+#include "DbConnector.h"
+#include "Flight.h"
 
 class Passenger {
 public:
@@ -18,7 +20,12 @@ public:
     virtual int getNumberFlight() = 0;
     virtual int getNumberTicket() = 0;
     virtual std::string getPasportData() = 0;
+    virtual int getStatus() = 0;
 };
+
+
+
+
 
 class ArrivingPassenger : public Passenger {
     std::string name;
@@ -34,7 +41,7 @@ class ArrivingPassenger : public Passenger {
     std::string pasportData;
 public:
     ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport);
-    void pasportControle();
+    int pasportControle();
     std::string getName() override;
     std::string getSurname() override;
     std::string getThirdname() override;
@@ -43,7 +50,15 @@ public:
     int getNumberFlight() override;
     int getNumberTicket() override;
     std::string getPasportData() override;
+    int getStatus() override;
 };
+
+
+
+
+
+
+
 
 class DepartingPassenger : public Passenger {
     std::string name;
@@ -60,8 +75,8 @@ class DepartingPassenger : public Passenger {
 public:
     DepartingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport);
     int checkInPassenger();
-    void checkPassenger();
-    void pasportControle();
+    int checkPassenger();
+    int pasportControle();
     std::string getName() override;
     std::string getSurname() override;
     std::string getThirdname() override;
@@ -70,7 +85,20 @@ public:
     int getNumberFlight() override;
     int getNumberTicket() override;
     std::string getPasportData() override;
+    int getStatus() override;
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,6 +115,7 @@ class  CreatArrivingPassenger : public PassengerFactory {
 public:
     Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport);
 };
+
 
 
 class CreatDepartingPassenger : public PassengerFactory {

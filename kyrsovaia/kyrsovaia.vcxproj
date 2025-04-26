@@ -147,11 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DbConnector.cpp" />
+    <ClCompile Include="Departing.cpp" />
     <ClCompile Include="kyrsovaia.cpp" />
     <ClCompile Include="Passenger.cpp" />
+    <ClCompile Include="Flight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DbConnector.h" />
+    <ClInclude Include="Flight.h" />
     <ClInclude Include="Passenger.h" />
   </ItemGroup>
   <ItemGroup>

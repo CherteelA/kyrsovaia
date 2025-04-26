@@ -22,6 +22,9 @@
     <Filter Include="Исходные файлы\classes\sql">
       <UniqueIdentifier>{3ab1614e-cb32-4164-8b98-7b599478a295}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\classes\flight">
+      <UniqueIdentifier>{07ac144c-47ad-4299-b67a-36f3843a8006}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kyrsovaia.cpp">
@@ -33,12 +36,21 @@
     <ClCompile Include="DbConnector.cpp">
       <Filter>Исходные файлы\classes\sql</Filter>
     </ClCompile>
+    <ClCompile Include="Flight.cpp">
+      <Filter>Исходные файлы\classes\flight</Filter>
+    </ClCompile>
+    <ClCompile Include="Departing.cpp">
+      <Filter>Исходные файлы\classes\passanger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Passenger.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="DbConnector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Flight.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
