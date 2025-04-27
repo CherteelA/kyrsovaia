@@ -23,6 +23,16 @@ int main() {
     pasDep->checkPassenger();
     pasDep->pasportControle();
     std::cout << pasDep->getStatus();
+
+    PassengerFactory* factory2 = new CreatArrivingPassenger;
+    Passenger* pas2 = factory2->createPassenger("Ekaterina", "Smirnova", "Alexeevna", true, true, true, "9819898220");
+
+    ArrivingPassenger* pasDep2 = (ArrivingPassenger*)pas2;
+    pasDep2->checkInPassenger();
+    pasDep2->pasportControle();
+    std::cout << pasDep2->getStatus();
+
+
     delete factory;
     system("pause");
     return 0;

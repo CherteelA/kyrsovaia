@@ -15,10 +15,7 @@ public:
     virtual std::string getName() = 0;
     virtual std::string getSurname() = 0;
     virtual std::string getThirdname() = 0;
-    virtual int getTicketNumber() = 0; // Получение номера билета
-    virtual int getSeatNumber() = 0; // Получение номера места
     virtual int getNumberFlight() = 0;
-    virtual int getNumberTicket() = 0;
     virtual std::string getPasportData() = 0;
     virtual int getStatus() = 0;
 };
@@ -35,20 +32,16 @@ class ArrivingPassenger : public Passenger {
     bool carryon;
     short status;//0 - перед регистрацией, 1 - зарегистрированный, 2 - проверенный, 3 - прошёл паспортный контроль
     bool abroad;
-    int numberTicket;
-    int numberSeat;
     int numberFlight;
     std::string pasportData;
 public:
     ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport);
     int pasportControle();
+    int checkInPassenger();
     std::string getName() override;
     std::string getSurname() override;
     std::string getThirdname() override;
-    int getTicketNumber() override; // Получение номера билета
-    int getSeatNumber() override; // Получение номера места
     int getNumberFlight() override;
-    int getNumberTicket() override;
     std::string getPasportData() override;
     int getStatus() override;
 };
@@ -80,10 +73,10 @@ public:
     std::string getName() override;
     std::string getSurname() override;
     std::string getThirdname() override;
-    int getTicketNumber() override; // Получение номера билета
-    int getSeatNumber() override; // Получение номера места
+    int getTicketNumber() ; // Получение номера билета
+    int getSeatNumber() ; // Получение номера места
     int getNumberFlight() override;
-    int getNumberTicket() override;
+    int getNumberTicket() ;
     std::string getPasportData() override;
     int getStatus() override;
 };

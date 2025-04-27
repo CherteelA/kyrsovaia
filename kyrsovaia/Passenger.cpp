@@ -249,6 +249,67 @@ void addTestData() {
     \VALUES('Pavel', 'Petrov', 'Vladimirovich', '2385242969')";
     con->request(std::move(sql));
 
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Svetlana', 'Smirnova', 'Ivanovna', '8001926630')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Maria', 'Kuznetsova', 'Fedorovna', '2880524289')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Svetlana', 'Mikhailova', 'Fedorovna', '8063450966')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Ekaterina', 'Smirnova', 'Alexeevna', '9819898220')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Svetlana', 'Mikhailova', 'Ivanovna', '3331737623')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Andrey', 'Ivanov', 'Vladimirovich', '3870666995')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Andrey', 'Kuznetsov', 'Alexandrovich', '2193479421')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Ekaterina', 'Vasileva', 'Fedorovna', '3895906955')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Maria', 'Kuznetsova', 'Nikolaevna', '1363448532')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Nikita', 'Plyakin', 'Nikolaevich', '3001623348')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Ekaterina', 'Smirnova', 'Nikolaevna', '5618066238')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Svetlana', 'Sokolova', 'Fedorovna', '6574741981')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Alexei', 'Sokolov', 'Yegorovich', '5615668761')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Nikita', 'Plyakin', 'Alexandrovich', '7526298498')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Anastasia', 'Sokolova', 'Sergreevna', '5581204287')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Svetlana', 'Vasileva', 'Fedorovna', '2515073117')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Dmitry', 'Kuznetsov', 'Nikolaevich', '1246263780')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Ekaterina', 'Smirnova', 'Nikolaevna', '2715209858')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Nikita', 'Petrov', 'Vladimirovich', '6108445724')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) VALUES('Maria', 'Smirnova', 'Alexandrovna', '4460826678')";
+    con->request(std::move(sql));
+
     /*---------------------------------ArrivedPassengers-----------------------------------------------*/
 
     sql = "TRUNCATE TABLE arrivedpassenger";

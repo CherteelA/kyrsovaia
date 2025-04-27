@@ -65,7 +65,7 @@ int DepartingPassenger::checkInPassenger() {
         status = -1;
         return 1;
     }
-    std::vector<std::vector<int>>;
+    
     int baggageNow = 0;
     if (con->getRes()->next()) {
         this->numberFlight = con->getRes()->getInt("flightnumber");
@@ -80,7 +80,7 @@ int DepartingPassenger::checkInPassenger() {
 
 
     if (baggageNow == 0 && !baggage) {
-        status - 1;
+        status = -1;
         return 1;
     }
 
@@ -116,7 +116,7 @@ int DepartingPassenger::pasportControle() {
     std::string sql = "SELECT name, surname, thirdname FROM abroad WHERE pasportData = '" + pasportData+"'";
     con->request(std::move(sql));
     if (con->getRes() == nullptr) {
-        status = -2;
+        status = -3;
         return 1;
     } 
     if (con->getRes()->next()) {

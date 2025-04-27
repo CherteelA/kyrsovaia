@@ -24,21 +24,11 @@ std::string ArrivingPassenger::getThirdname() {
     return thirdName;
 }
 
-int ArrivingPassenger::getTicketNumber() {
-    return numberTicket;
-}
-
-int ArrivingPassenger::getSeatNumber() {
-    return numberSeat;
-}
 
 int ArrivingPassenger::getNumberFlight() {
     return numberFlight;
 }
 
-int ArrivingPassenger::getNumberTicket() {
-    return numberTicket;
-}
 
 std::string ArrivingPassenger::getPasportData() {
     return pasportData;
@@ -48,13 +38,53 @@ int ArrivingPassenger::getStatus() {
     return status;
 }
 
+
+int ArrivingPassenger::checkInPassenger() {
+    if (status != 0) {
+        return 1;
+    }
+    DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
+    std::string sql = "SELECT name, surname, thirdname FROM arrivedpassenger WHERE pasportData = '" + pasportData + "'";
+    con->request(std::move(sql));
+    if (con->getRes() == nullptr) {
+        status = -1;
+        return 1;
+    }
+    std::vector<std::vector<int>>;
+    std::string surnameNow;
+    std::string nameNow;
+    std::string thirdnameNow;
+    if (con->getRes()->next()) {
+        std::string nameNow = con->getRes()->getString("name");
+        std::string surnameNow = con->getRes()->getString("surname");
+        std::string thirdnameNow = con->getRes()->getString("thirdname");
+    }
+    else {
+        std::cout << "Passenger not found";
+        status = -1;
+        return 1;
+    }
+
+    if (nameNow != this->name || surnameNow != this->surname || thirdnameNow != this->thirdName) {
+        std::cout << "different data";
+        status = -1;
+    }
+    status = 1;
+}
+
 int ArrivingPassenger::pasportControle() {
-    
+    if (status != 1) {
+        status = -3;
+    }
+    if (abroad == false) {
+        status = 3;
+        return 0;
+    }
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
     std::string sql = "SELECT name, surname, thirdname FROM abroad WHERE pasportData = '" + pasportData + "'";
     con->request(std::move(sql));
     if (con->getRes() == nullptr) {
-        status = -2;
+        status = -3;
         return 1;
     }
     if (con->getRes()->next()) {
