@@ -59,18 +59,23 @@ int DepartingPassenger::checkInPassenger() {
         return 1;
     }
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
-    std::string sql = "SELECT flightnumber, numberTicket, baggage FROM passenger WHERE pasportData = " + pasportData;
-    con->request(std::move(sql), "airport");
+    std::string sql = "SELECT flightnumber, numberTicket, baggage FROM passenger WHERE pasportData = '" + pasportData + "'";
+    con->request(std::move(sql));
     if (con->getRes() == nullptr) {
         status = -1;
         return 1;
     }
     std::vector<std::vector<int>>;
     int baggageNow = 0;
-    while (con->getRes()->next()) {
+    if (con->getRes()->next()) {
         this->numberFlight = con->getRes()->getInt("flightnumber");
         this->numberTicket = con->getRes()->getInt("numberTicket");
         baggageNow = con->getRes()->getInt("baggage");
+    }
+    else {
+        std::cout << "Passenger not found";
+        status = -1;
+        return 1;
     }
 
 
@@ -108,19 +113,24 @@ int DepartingPassenger::pasportControle() {
         return 1;
     }
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
-    std::string sql = "SELECT name, surname, thirdname FROM abroad WHERE pasportData = " + pasportData;
-    con->request(std::move(sql), "airport");
+    std::string sql = "SELECT name, surname, thirdname FROM abroad WHERE pasportData = '" + pasportData+"'";
+    con->request(std::move(sql));
     if (con->getRes() == nullptr) {
         status = -2;
         return 1;
     } 
-    while (con->getRes()->next()) {
+    if (con->getRes()->next()) {
         std::string name = con->getRes()->getString("name");
         std::string surname = con->getRes()->getString("surname");
         std::string thirdname = con->getRes()->getString("thirdname");
         if (name != this->name || surname != this->surname || thirdName != this->thirdName) {
             status = -3;
         }
+    }
+    else {
+        std::cout << "Passenger not found";
+        status = -3;
+        return 1;
     }
 
     status = 3;

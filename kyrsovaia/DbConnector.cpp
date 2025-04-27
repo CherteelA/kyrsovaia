@@ -8,7 +8,7 @@ DbConnector* DbConnector::current = nullptr;
 int DbConnector::count = 0;
 
 
-DbConnector* DbConnector::getInstance(std::string &&host, std::string &&nameUsser, std::string &&paswword) {
+DbConnector* DbConnector::getInstance(std::string&& host, std::string&& nameUsser, std::string&& paswword) {
     if (current == nullptr) {
 
         current = new DbConnector(std::move(host), std::move(nameUsser), std::move(paswword));
@@ -23,9 +23,25 @@ DbConnector::~DbConnector() {
         current = nullptr;
         isConnect = false;
     }
+    if (driver != nullptr) {
+        delete driver;
+        driver = nullptr;
+    }
+    if (con != nullptr) {
+        delete con;
+        con = nullptr;
+    }
+    if (res != nullptr) {
+        delete res;
+        res = nullptr;
+    }
+    if (stmt != nullptr) {
+        delete stmt;
+        stmt = nullptr;
+    }
 }
 
-DbConnector::DbConnector(std::string &&host, std::string &&nameUsser, std::string &&paswword) {
+DbConnector::DbConnector(std::string&& host, std::string&& nameUsser, std::string&& paswword) {
     driver = nullptr;
     con = nullptr;
     stmt = nullptr;
@@ -38,7 +54,7 @@ DbConnector::DbConnector(std::string &&host, std::string &&nameUsser, std::strin
         isConnect = true;
     }
     catch (std::exception& e) {
-        e.what();
+        std::cerr << e.what();
         std::cout << "\nTry connection to database again\n";
         isConnect = false;
         driver = nullptr;
@@ -47,20 +63,33 @@ DbConnector::DbConnector(std::string &&host, std::string &&nameUsser, std::strin
         res = nullptr;
     }
 
-    
+
 }
 
-void DbConnector::request(std::string &&sql, std::string &&nameDb) {
+void DbConnector::request(std::string&& sql) {
     if (isConnect) {
         try {
-            con->setSchema(nameDb);
+            if (res != nullptr) {
+                delete res;
+                res = nullptr;
+            }
+            if (stmt != nullptr) {
+                delete stmt;
+                stmt = nullptr;
+            }
+            con->setSchema("airport");
             stmt = con->createStatement();
-            res = stmt->executeQuery(sql);
-            //res = stmt->executeQuery("SELECT flightnumber, numberTicket FROM passenger WHERE name = 'Alexsey' AND 'surname' = 'Sitnikov' AND thirdname = 'Pavlovich'");
+            if (sql[0] == 'S') {
+                res = stmt->executeQuery(sql);
+            }
+            else {
+                stmt->executeUpdate(sql);
+            }
         }
-        catch (std::exception &e) {
-            e.what();
-            std::cout << "\nTry request again\n";
+        catch (std::exception& e) {
+            std::cerr << "Error executing query: " << sql << "\n";
+            std::cerr << "Error message: " << e.what() << "\n";
+            std::cerr << "Try request again\n";
         }
     }
 }

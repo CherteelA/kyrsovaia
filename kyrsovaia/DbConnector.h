@@ -30,7 +30,7 @@ public:
     DbConnector(DbConnector* s) = delete;
     static DbConnector* getInstance(std::string &&host, std::string &&nameUsser, std::string &&paswword);
     ~DbConnector();
-    void request(std::string &&sql, std::string &&nameDb);
+    void request(std::string &&sql);
     sql::ResultSet* getRes();
     bool getIsConnect();
     
