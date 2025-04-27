@@ -42,6 +42,9 @@
     <ClCompile Include="Departing.cpp">
       <Filter>Исходные файлы\classes\passanger</Filter>
     </ClCompile>
+    <ClCompile Include="Arriving.cpp">
+      <Filter>Исходные файлы\classes\passanger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Passenger.h">

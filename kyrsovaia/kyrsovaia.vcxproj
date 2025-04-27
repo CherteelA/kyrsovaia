@@ -146,6 +146,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arriving.cpp" />
     <ClCompile Include="DbConnector.cpp" />
     <ClCompile Include="Departing.cpp" />
     <ClCompile Include="kyrsovaia.cpp" />

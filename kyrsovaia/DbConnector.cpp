@@ -21,7 +21,7 @@ DbConnector::~DbConnector() {
     if (current != nullptr && --count == 0) {
         delete current;
         current = nullptr;
-        isConnect = false;
+        isConnect = false; 
     }
     if (driver != nullptr) {
         delete driver;

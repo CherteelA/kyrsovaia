@@ -6,57 +6,6 @@
 
 
 
-ArrivingPassenger::ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport)
-    : name(name),
-    surname(surname),
-    thirdName(thirdName),
-    baggage(baggage),
-    carryon(carryOn),
-    abroad(abroad),
-    pasportData(pasport)
-{
-
-}
-
-std::string ArrivingPassenger::getName()  {
-    return name;
-}
-
-std::string ArrivingPassenger::getSurname() {
-    return surname;
-}
-
-std::string ArrivingPassenger::getThirdname() {
-    return thirdName;
-}
-
-int ArrivingPassenger::getTicketNumber() {
-    return numberTicket;
-}
-
-int ArrivingPassenger::getSeatNumber() {
-    return numberSeat;
-}
-
-int ArrivingPassenger::getNumberFlight() {
-    return numberFlight;
-}
-
-int ArrivingPassenger::getNumberTicket() {
-    return numberTicket;
-}
-
-std::string ArrivingPassenger::getPasportData() {
-    return pasportData;
-}
-
-int ArrivingPassenger::getStatus() {
-    return status;
-}
-
-
-
-
 Passenger* CreatArrivingPassenger::createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport) {
     return new ArrivingPassenger(name, surname, thirdName, baggage, carryOn, abroad, pasport);
 }
@@ -83,27 +32,27 @@ void addTestData() {
     con->request(std::move(sql));
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-        \VALUES('Nikita', 'Plyakin', 'Fndreevich', '1214', 1223, '1419786456', 1)";
+        \VALUES('Nikita', 'Plyakin', 'Andreevich', '1214', 1223, '1419786456', 1)";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-        \VALUES('Alexei', 'Sokolov', 'Nikolaevna', '3456', 8819, '4131556864', 0)";
+        \VALUES('Alexei', 'Sokolov', 'Nikolaevich', '3456', 8819, '4131556864', 0)";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Dmitry', 'Kuznetsov', 'Sergreevna', '3456', 1717, '6636059702', 1)";
+    \VALUES('Dmitry', 'Kuznetsov', 'Sergreevich', '3456', 1717, '6636059702', 1)";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Ivan', 'Ivanov', 'Denisovna', '2345', 6656, '4913449509', 1)";
+    \VALUES('Ivan', 'Ivanov', 'Denisovich', '2345', 6656, '4913449509', 1)";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Nikita', 'Mikhailov', 'Sergreevna', '2345', 7723, '5510041997', 1)";
+    \VALUES('Nikita', 'Mikhailov', 'Sergreevich', '2345', 7723, '5510041997', 1)";
     con->request(std::move(sql));
 
 
@@ -118,12 +67,12 @@ void addTestData() {
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Anastasia', 'Vasileva', 'Vladimirovich', '2345', 7472, '6749268564', 1)";
+    \VALUES('Anastasia', 'Vasileva', 'Vladimirovna', '2345', 7472, '6749268564', 1)";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Nikita', 'Sokolov', 'Alexandrovna', '2345', 3019, '6689951261', 1)";
+    \VALUES('Nikita', 'Sokolov', 'Alexandrovich', '2345', 3019, '6689951261', 1)";
     con->request(std::move(sql));
 
 
@@ -148,7 +97,7 @@ void addTestData() {
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Alexei', 'Sokolov', 'Alexandrovna', '2345', 2661, '7706943996', 1)";
+    \VALUES('Alexei', 'Sokolov', 'Alexandrovich', '2345', 2661, '7706943996', 1)";
     con->request(std::move(sql));
 
 
@@ -168,7 +117,7 @@ void addTestData() {
 
 
     sql = "INSERT INTO passenger(name, surname, thirdname, flightnumber, numberTicket, pasportData, baggage) \
-    \VALUES('Andrey', 'Smirnov', 'Yegorovna', '3456', 3102, '8846255394', 0)";
+    \VALUES('Andrey', 'Smirnov', 'Yegorovich', '3456', 3102, '8846255394', 0)";
     con->request(std::move(sql));
 
 
@@ -198,27 +147,27 @@ void addTestData() {
     con->request(std::move(sql));
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-        \VALUES('Nikita', 'Plyakin', 'Fndreevich', '1419786456')";
+        \VALUES('Nikita', 'Plyakin', 'Andreevich', '1419786456')";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-        \VALUES('Alexei', 'Sokolov', 'Nikolaevna', '4131556864')";
+        \VALUES('Alexei', 'Sokolov', 'Nikolaevich', '4131556864')";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Dmitry', 'Kuznetsov', 'Sergreevna', '6636059702')";
+    \VALUES('Dmitry', 'Kuznetsov', 'Sergreevich', '6636059702')";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Ivan', 'Ivanov', 'Denisovna', '4913449509')";
+    \VALUES('Ivan', 'Ivanov', 'Denisovich', '4913449509')";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Nikita', 'Mikhailov', 'Sergreevna', '5510041997')";
+    \VALUES('Nikita', 'Mikhailov', 'Sergreevich', '5510041997')";
     con->request(std::move(sql));
 
 
@@ -233,12 +182,12 @@ void addTestData() {
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Anastasia', 'Vasileva', 'Vladimirovich', '6749268564')";
+    \VALUES('Anastasia', 'Vasileva', 'Vladimirovna', '6749268564')";
     con->request(std::move(sql));
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Nikita', 'Sokolov', 'Alexandrovna', '6689951261')";
+    \VALUES('Nikita', 'Sokolov', 'Alexandrovich', '6689951261')";
     con->request(std::move(sql));
 
 
@@ -263,7 +212,7 @@ void addTestData() {
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Alexei', 'Sokolov', 'Alexandrovna', '7706943996')";
+    \VALUES('Alexei', 'Sokolov', 'Alexandrovich', '7706943996')";
     con->request(std::move(sql));
 
 
@@ -283,7 +232,7 @@ void addTestData() {
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-    \VALUES('Andrey', 'Smirnov', 'Yegorovna', '8846255394')";
+    \VALUES('Andrey', 'Smirnov', 'Yegorovich', '8846255394')";
     con->request(std::move(sql));
 
 
@@ -299,4 +248,73 @@ void addTestData() {
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
     \VALUES('Pavel', 'Petrov', 'Vladimirovich', '2385242969')";
     con->request(std::move(sql));
+
+    /*---------------------------------ArrivedPassengers-----------------------------------------------*/
+
+    sql = "TRUNCATE TABLE arrivedpassenger";
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Svetlana', 'Smirnova', 'Ivanovna', '1914', '8001926630')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Maria', 'Kuznetsova', 'Fedorovna', '1914', '2880524289')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Svetlana', 'Mikhailova', 'Fedorovna', '3314', '8063450966')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Ekaterina', 'Smirnova', 'Alexeevna', '3314', '9819898220')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Svetlana', 'Mikhailova', 'Ivanovna', '1232', '3331737623')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Andrey', 'Ivanov', 'Vladimirovich', '1232', '3870666995')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Andrey', 'Kuznetsov', 'Alexandrovich', '3314', '2193479421')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Ekaterina', 'Vasileva', 'Fedorovna', '1232', '3895906955')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Maria', 'Kuznetsova', 'Nikolaevna', '1914', '1363448532')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Nikita', 'Plyakin', 'Nikolaevich', '1914', '3001623348')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Ekaterina', 'Smirnova', 'Nikolaevna', '3314', '5618066238')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Svetlana', 'Sokolova', 'Fedorovna', '1232', '6574741981')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Alexei', 'Sokolov', 'Yegorovich', '1914', '5615668761')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Nikita', 'Plyakin', 'Alexandrovich', '1232', '7526298498')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Anastasia', 'Sokolova', 'Sergreevna', '1232', '5581204287')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Svetlana', 'Vasileva', 'Fedorovna', '1914', '2515073117')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Dmitry', 'Kuznetsov', 'Nikolaevich', '1914', '1246263780')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Ekaterina', 'Smirnova', 'Nikolaevna', '3314', '2715209858')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Nikita', 'Petrov', 'Vladimirovich', '3314', '6108445724')";
+    con->request(std::move(sql));
+
+    sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Maria', 'Smirnova', 'Alexandrovna', '3314', '4460826678')";
+    con->request(std::move(sql));
 }
+
+
+
+
+

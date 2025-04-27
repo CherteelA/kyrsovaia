@@ -1,8 +1,50 @@
-﻿  DbConnector.cpp
+﻿  Passenger.cpp
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(31,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(35,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(40,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(45,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(50,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(55,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(60,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(65,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(70,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(75,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(80,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(85,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(90,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(95,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(100,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(105,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(110,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(115,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(120,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(125,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(130,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(134,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(146,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(150,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(155,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(160,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(165,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(170,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(175,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(180,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(185,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(190,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(195,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(200,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(205,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(210,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(215,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(220,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(225,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(230,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(235,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(240,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(245,1): warning C4129: "V": нераспознанная escape-последовательность символов
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp(249,1): warning C4129: "V": нераспознанная escape-последовательность символов
   Создание кода
-C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Departing.cpp(138): warning C4715: DepartingPassenger::pasportControle: значение возвращается не при всех путях выполнения
-C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Departing.cpp(99): warning C4715: DepartingPassenger::checkInPassenger: значение возвращается не при всех путях выполнения
-  4 of 238 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
+  1 of 238 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
