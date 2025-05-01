@@ -7,12 +7,13 @@
 class Flight {
 	int number;
 	int maxSeats;
-	
 	int seatIndex;
+	bool abroad;
 public:
-	Flight(int numb, int seatsSize);
+	Flight(int numb, int seatsSize, bool setAbroad);
 	int getNumber();
 	int getSeatNumber();
+	bool getAbroadStat();
 };
 
 
@@ -22,7 +23,11 @@ public:
 	FlightsContainer() = default;
 	void addFlight(Flight& F);
 	int getSeatNumber(int flightNumber);
+	int getStatAbroad(int flightNumber);
 };
+
+
+
 
 
 #endif // FLIGHT_H

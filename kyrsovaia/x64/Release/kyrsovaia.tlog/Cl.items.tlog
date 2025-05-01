@@ -1,6 +1,10 @@
 C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Arriving.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\Arriving.obj
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\ArrivingService.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\ArrivingService.obj
 C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\DbConnector.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\DbConnector.obj
 C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Departing.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\Departing.obj
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\DepartingService.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\DepartingService.obj
 C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\kyrsovaia.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\kyrsovaia.obj
-C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Passenger.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\Passenger.obj
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\PassengerFactory.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\PassengerFactory.obj
 C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Flight.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\Flight.obj
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Status.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\Status.obj
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\TestData.cpp;C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\x64\Release\TestData.obj

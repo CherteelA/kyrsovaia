@@ -18,6 +18,8 @@ public:
     virtual int getNumberFlight() = 0;
     virtual std::string getPasportData() = 0;
     virtual int getStatus() = 0;
+    virtual bool getAbroadStatus() = 0;
+    virtual int getType() = 0; //0 departing, 1 arriving
 };
 
 
@@ -31,11 +33,11 @@ class ArrivingPassenger : public Passenger {
     bool baggage;
     bool carryon;
     short status;//0 - перед регистрацией, 1 - зарегистрированный, 2 - проверенный, 3 - прошёл паспортный контроль
-    bool abroad;
     int numberFlight;
     std::string pasportData;
+    bool abroad;
 public:
-    ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport);
+    ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, std::string& pasport);
     int pasportControle();
     int checkInPassenger();
     std::string getName() override;
@@ -44,6 +46,8 @@ public:
     int getNumberFlight() override;
     std::string getPasportData() override;
     int getStatus() override;
+    bool getAbroadStatus() override;
+    int getType() override;
 };
 
 
@@ -60,13 +64,13 @@ class DepartingPassenger : public Passenger {
     bool baggage;
     bool carryon;
     short status;//0 - перед регистрацией, 1 - зарегистрированный, 2 - проверенный, 3 - прошёл паспортный контроль
-    bool abroad;
     int numberTicket;
     int numberSeat;
     int numberFlight;
     std::string pasportData;
+    bool abroad;
 public:
-    DepartingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport);
+    DepartingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, std::string& pasport);
     int checkInPassenger();
     int checkPassenger();
     int pasportControle();
@@ -79,6 +83,8 @@ public:
     int getNumberTicket() ;
     std::string getPasportData() override;
     int getStatus() override;
+    bool getAbroadStatus() override;
+    int getType() override;
 };
 
 
@@ -98,7 +104,7 @@ public:
 
 class PassengerFactory {
 public:
-    virtual Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport) = 0; // Метод для создания пассажира
+    virtual Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, std::string&& pasport) = 0; // Метод для создания пассажира
     virtual ~PassengerFactory() = default; // Виртуальный деструктор
 };
 
@@ -106,14 +112,14 @@ public:
 
 class  CreatArrivingPassenger : public PassengerFactory {
 public:
-    Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport);
+    Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, std::string&& pasport);
 };
 
 
 
 class CreatDepartingPassenger : public PassengerFactory {
 public:
-    Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport);
+    Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, std::string&& pasport);
 };
 
 

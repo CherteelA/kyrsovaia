@@ -147,16 +147,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arriving.cpp" />
+    <ClCompile Include="ArrivingService.cpp" />
     <ClCompile Include="DbConnector.cpp" />
     <ClCompile Include="Departing.cpp" />
+    <ClCompile Include="DepartingService.cpp" />
     <ClCompile Include="kyrsovaia.cpp" />
-    <ClCompile Include="Passenger.cpp" />
+    <ClCompile Include="PassengerFactory.cpp" />
     <ClCompile Include="Flight.cpp" />
+    <ClCompile Include="Status.cpp" />
+    <ClCompile Include="TestData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DbConnector.h" />
     <ClInclude Include="Flight.h" />
     <ClInclude Include="Passenger.h" />
+    <ClInclude Include="Service.h" />
+    <ClInclude Include="Status.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

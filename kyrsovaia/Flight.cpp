@@ -3,7 +3,7 @@
 
 std::vector<Flight> FlightsContainer::Flights;
 
-Flight::Flight(int numb, int seatsSize) : number(numb), maxSeats(seatsSize), seatIndex(1){
+Flight::Flight(int numb, int seatsSize, bool setAbroad) : number(numb), maxSeats(seatsSize), seatIndex(1), abroad(setAbroad){
 	
 }
 
@@ -18,6 +18,10 @@ int Flight::getSeatNumber() {
 	return seatIndex++;
 }
 
+bool Flight::getAbroadStat() {
+	return abroad;
+}
+
 
 void FlightsContainer::addFlight(Flight& F) {
 	Flights.push_back(F);
@@ -30,4 +34,14 @@ int FlightsContainer::getSeatNumber(int flightNumber) {
 		}
 	}
 	return -2;
+}
+
+
+int FlightsContainer::getStatAbroad(int flightNumber) {
+	for (Flight i : Flights) {
+		if (i.getNumber() == flightNumber) {
+			return i.getAbroadStat() ? 1 : 0;
+		}
+	}
+	return -1;
 }

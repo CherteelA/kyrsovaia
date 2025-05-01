@@ -1,29 +1,14 @@
 #include "Passenger.h"
-
-
-
-
-
-
-
-Passenger* CreatArrivingPassenger::createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport) {
-    return new ArrivingPassenger(name, surname, thirdName, baggage, carryOn, abroad, pasport);
-}
-
-
-Passenger* CreatDepartingPassenger::createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, bool&& abroad, std::string&& pasport) {
-    return new DepartingPassenger(name, surname, thirdName, baggage, carryOn, abroad, pasport);
-}
-
-
-
+#include "Flight.h"
 
 
 void addTestData() {
+
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
 
 
     std::string sql = "TRUNCATE TABLE passenger";
+
     con->request(std::move(sql));
 
 
@@ -373,9 +358,25 @@ void addTestData() {
 
     sql = "INSERT INTO arrivedpassenger(name, surname, thirdname, flightnumber, pasportData) VALUES('Maria', 'Smirnova', 'Alexandrovna', '3314', '4460826678')";
     con->request(std::move(sql));
+
+
+    /*----------------------------------Flights---------------------------------*/
+    FlightsContainer cc;
+    Flight t1(1214, 180, true);
+    cc.addFlight(t1);
+
+    Flight t2(3456, 180, true);
+    cc.addFlight(t2);
+
+    Flight t3(2345, 180, false);
+    cc.addFlight(t3);
+
+    Flight t4(1914, 180, true);
+    cc.addFlight(t4);
+
+    Flight t5(3314, 180, true);
+    cc.addFlight(t5);
+
+    Flight t6(1232, 180, false);
+    cc.addFlight(t6);
 }
-
-
-
-
-

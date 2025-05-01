@@ -1,13 +1,13 @@
 #include "Passenger.h"
 
-ArrivingPassenger::ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, bool& abroad, std::string& pasport)
+ArrivingPassenger::ArrivingPassenger(std::string& name, std::string& surname, std::string& thirdName, bool& baggage, bool& carryOn, std::string& pasport)
     : name(name),
     surname(surname),
     thirdName(thirdName),
     baggage(baggage),
     carryon(carryOn),
-    abroad(abroad),
-    pasportData(pasport)
+    pasportData(pasport),
+    abroad(false)
 {
 
 }
@@ -38,6 +38,13 @@ int ArrivingPassenger::getStatus() {
     return status;
 }
 
+bool ArrivingPassenger::getAbroadStatus() {
+    return abroad;
+}
+
+int ArrivingPassenger::getType() {
+    return 1;
+}
 
 int ArrivingPassenger::checkInPassenger() {
     if (status != 0) {
@@ -76,13 +83,23 @@ int ArrivingPassenger::pasportControle() {
     if (status != 1) {
         status = -3;
     }
-    if (abroad == false) {
+
+    FlightsContainer Flights;
+    int stat = Flights.getStatAbroad(numberFlight);
+    if (stat == 0) {
         status = 3;
         return 0;
     }
+    else if (stat == -1) {
+        status - 3;
+        return 1;
+    }
+
+    abroad = true;
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
     std::string sql = "SELECT name, surname, thirdname FROM abroad WHERE pasportData = '" + pasportData + "'";
     con->request(std::move(sql));
+
     if (con->getRes() == nullptr) {
         status = -3;
         return 1;

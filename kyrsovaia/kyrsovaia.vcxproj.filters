@@ -25,12 +25,18 @@
     <Filter Include="Исходные файлы\classes\flight">
       <UniqueIdentifier>{07ac144c-47ad-4299-b67a-36f3843a8006}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\classes\service">
+      <UniqueIdentifier>{b9f4f597-28a0-4690-9558-45690bd6ebd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\classes\status">
+      <UniqueIdentifier>{04839601-aa42-4ae2-85dd-e3acd43c86a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kyrsovaia.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Passenger.cpp">
+    <ClCompile Include="PassengerFactory.cpp">
       <Filter>Исходные файлы\classes\passanger</Filter>
     </ClCompile>
     <ClCompile Include="DbConnector.cpp">
@@ -45,6 +51,18 @@
     <ClCompile Include="Arriving.cpp">
       <Filter>Исходные файлы\classes\passanger</Filter>
     </ClCompile>
+    <ClCompile Include="TestData.cpp">
+      <Filter>Исходные файлы\classes\passanger</Filter>
+    </ClCompile>
+    <ClCompile Include="DepartingService.cpp">
+      <Filter>Исходные файлы\classes\service</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrivingService.cpp">
+      <Filter>Исходные файлы\classes\service</Filter>
+    </ClCompile>
+    <ClCompile Include="Status.cpp">
+      <Filter>Исходные файлы\classes\status</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Passenger.h">
@@ -54,6 +72,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Flight.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
