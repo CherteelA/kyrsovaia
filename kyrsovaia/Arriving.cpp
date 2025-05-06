@@ -94,7 +94,7 @@ int ArrivingPassenger::pasportControle() {
         return 0;
     }
     else if (stat == -1) {
-        status - 3;
+        status = -4;
         return 1;
     }
 
