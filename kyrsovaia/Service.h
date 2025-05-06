@@ -4,12 +4,12 @@
 #include <thread>
 
 class DepartingService {
-	std::queue<DepartingPassenger> checkInQueue;
-	std::queue<DepartingPassenger> checkPassengerQueue;
-	std::queue<DepartingPassenger> pasportControleQueue;
+	std::queue<DepartingPassenger*> checkInQueue;
+	std::queue<DepartingPassenger*> checkPassengerQueue;
+	std::queue<DepartingPassenger*> pasportControleQueue;
 public:
 	DepartingService() = default;
-	void addPassengber(DepartingPassenger& newPassenger);
+	void addPassengber(DepartingPassenger* newPassenger);
 	void checkInPassenger();
 	void checkPassenger();
 	void PasportControlPassenger();
@@ -20,11 +20,11 @@ public:
 
 
 class ArrivingService {
-	std::queue<ArrivingPassenger> checkInQueue;
-	std::queue<ArrivingPassenger> pasportControleQueue;
+	std::queue<ArrivingPassenger*> checkInQueue;
+	std::queue<ArrivingPassenger*> pasportControleQueue;
 public:
 	ArrivingService() = default;
-	void addPassengber(ArrivingPassenger& newPassenger);
+	void addPassengber(ArrivingPassenger* newPassenger);
 	void checkInPassenger();
 	void PasportControlPassenger();
 	int getSizeCheckInQueue();

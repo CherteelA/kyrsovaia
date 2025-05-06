@@ -62,9 +62,9 @@ int ArrivingPassenger::checkInPassenger() {
     std::string nameNow;
     std::string thirdnameNow;
     if (con->getRes()->next()) {
-        std::string nameNow = con->getRes()->getString("name");
-        std::string surnameNow = con->getRes()->getString("surname");
-        std::string thirdnameNow = con->getRes()->getString("thirdname");
+        nameNow = con->getRes()->getString("name");
+        surnameNow = con->getRes()->getString("surname");
+        thirdnameNow = con->getRes()->getString("thirdname");
     }
     else {
         std::cout << "Passenger not found";
@@ -75,13 +75,14 @@ int ArrivingPassenger::checkInPassenger() {
     if (nameNow != this->name || surnameNow != this->surname || thirdnameNow != this->thirdName) {
         std::cout << "different data";
         status = -1;
+        return 1;
     }
     status = 1;
 }
 
 int ArrivingPassenger::pasportControle() {
     if (status != 1) {
-        status = -3;
+        return 1;
     }
 
     FlightsContainer Flights;
@@ -110,6 +111,7 @@ int ArrivingPassenger::pasportControle() {
         std::string thirdname = con->getRes()->getString("thirdname");
         if (name != this->name || surname != this->surname || thirdName != this->thirdName) {
             status = -3;
+            return 1;
         }
     }
     else {

@@ -34,15 +34,15 @@ void departing(DepartingService &service, bool* stop){
     while (true) {
         if (service.getSizeCheckInQueue() > 0) {
             service.checkInPassenger();
-            std::cout << 1;
+           
         }
         if (service.getSizeCheckPassengerQueue() > 0) {
             service.checkPassenger();
-            std::cout << 1;
+            
         }
         if (service.getSizePasportControleQueue() > 0) {
             service.PasportControlPassenger();
-            std::cout << 1;
+            
         }
         if (*stop) {
             break;
@@ -54,9 +54,11 @@ void arriving(ArrivingService &service, bool *stop) {
     while (true) {
         if (service.getSizeCheckInQueue() > 0) {
             service.checkInPassenger();
+            
         }
         if (service.getSizePasportControleQueue() > 0) {
             service.PasportControlPassenger();
+            
         }
         if (*stop) {
             break;
@@ -79,12 +81,11 @@ int main() {
 
 
     std::string comand = "help";
-    PassengerFactory* factory = new CreatDepartingPassenger;
+    PassengerFactory* factoryDeparting = new CreatDepartingPassenger;
+    PassengerFactory* factoryArriving = new CreatArrivingPassenger;
     Passenger* passenger;
 
     Status stat;
-
-   
 
     while (true) {
         if (comand == "help") {
@@ -95,17 +96,17 @@ int main() {
         }
         else if (comand == "departing") {
             title temp = getData();
-            passenger = factory->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
+            passenger = factoryDeparting->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
             if (DepartingPassenger* dp = dynamic_cast<DepartingPassenger*>(passenger)) {
-                departingService.addPassengber(*dp);
+                departingService.addPassengber(dp);
                 stat.addPassenger(dp);
             }
         }
         else if (comand == "arriving") {
             title temp = getData();
-            passenger = factory->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
+            passenger = factoryArriving->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
             if (ArrivingPassenger* ap = dynamic_cast<ArrivingPassenger*>(passenger)) {
-                arrivingService.addPassengber(*ap);
+                arrivingService.addPassengber(ap);
                 stat.addPassenger(ap);
             }
         }
@@ -120,8 +121,8 @@ int main() {
         std::cin >> comand;
 
     }
-    delete factory;
-    
+    delete factoryDeparting;
+    delete factoryArriving;
     depar.join();
     arrived.join();
     system("pause");

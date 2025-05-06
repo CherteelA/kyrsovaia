@@ -1,8 +1,11 @@
-﻿  kyrsovaia.cpp
+﻿  Arriving.cpp
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Arriving.cpp(60,10): warning C4091: : пропускается слева от "std::vector<std::vector<int,std::allocator<int>>,std::allocator<std::vector<int,std::allocator<int>>>>", когда ни одна переменная не объявлена
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Arriving.cpp(95,16): warning C4552: "-": результат выражения не используется
   Создание кода
-  2 of 638 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Arriving.cpp(81): warning C4715: ArrivingPassenger::checkInPassenger: значение возвращается не при всех путях выполнения
+  10 of 637 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
+    39 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   kyrsovaia.vcxproj -> C:\Users\admin\source\repos\kyrsovaia\x64\Release\kyrsovaia.exe
   C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\libcrypto-3-x64.dll

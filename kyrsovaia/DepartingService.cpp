@@ -1,16 +1,16 @@
 #include "Service.h"
 
 
-void DepartingService::addPassengber(DepartingPassenger& newPassenger) {
+void DepartingService::addPassengber(DepartingPassenger *newPassenger) {
 	checkInQueue.emplace(newPassenger);
 }
 
 
 void DepartingService::checkInPassenger() {
-	DepartingPassenger passenger = checkInQueue.front();
+	DepartingPassenger* passenger = checkInQueue.front();
 	checkInQueue.pop();
-	passenger.checkInPassenger();
-	if (passenger.getStatus() == 1) {
+	passenger->checkInPassenger();
+	if (passenger->getStatus() == 1) {
 		checkPassengerQueue.emplace(passenger);
 	}
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -18,10 +18,10 @@ void DepartingService::checkInPassenger() {
 
 
 void DepartingService::checkPassenger() {
-	DepartingPassenger passenger = checkPassengerQueue.front();
+	DepartingPassenger* passenger = checkPassengerQueue.front();
 	checkPassengerQueue.pop();
-	passenger.checkPassenger();
-	if (passenger.getStatus() == 2) {
+	passenger->checkPassenger();
+	if (passenger->getStatus() == 2) {
 		pasportControleQueue.emplace(passenger);
 	}
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -30,9 +30,9 @@ void DepartingService::checkPassenger() {
 
 void DepartingService::PasportControlPassenger() {
 
-	DepartingPassenger passenger = pasportControleQueue.front();
+	DepartingPassenger* passenger = pasportControleQueue.front();
 	pasportControleQueue.pop();
-	passenger.pasportControle();
+	passenger->pasportControle();
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
