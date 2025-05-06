@@ -57,6 +57,22 @@ void Status::printStatus() {
 					std::cout << "Прилетел";
 				}
 				break;
+			case -1:
+				if (i->getType() == 0) {
+					std::cout << "Не прошёл регистрацию";
+				}
+				else {
+					std::cout << "Не прошёл регистрацию после прилёта";
+				}
+				break;
+			case -2:
+				std::cout << "Не прошёл досмотр";
+				break;
+			case -3:
+				std::cout << "Не прошёл паспортный контроль";
+				break;
+			case -4:
+				std::cout << "Рейс не найден";
 			}
 			std::cout << std::endl << std::endl;
 		}

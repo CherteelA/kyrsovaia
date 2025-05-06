@@ -30,18 +30,18 @@ title getData() {
     return temp;
 }
 
-void departing(DepartingService &service, bool* stop){
+void departing(DepartingService* service, bool* stop){
     while (true) {
-        if (service.getSizeCheckInQueue() > 0) {
-            service.checkInPassenger();
+        if (service->getSizeCheckInQueue() > 0) {
+            service->checkInPassenger();
            
         }
-        if (service.getSizeCheckPassengerQueue() > 0) {
-            service.checkPassenger();
+        if (service->getSizeCheckPassengerQueue() > 0) {
+            service->checkPassenger();
             
         }
-        if (service.getSizePasportControleQueue() > 0) {
-            service.PasportControlPassenger();
+        if (service->getSizePasportControleQueue() > 0) {
+            service->PasportControlPassenger();
             
         }
         if (*stop) {
@@ -50,14 +50,14 @@ void departing(DepartingService &service, bool* stop){
     }
 }
 
-void arriving(ArrivingService &service, bool *stop) {
+void arriving(ArrivingService* service, bool *stop) {
     while (true) {
-        if (service.getSizeCheckInQueue() > 0) {
-            service.checkInPassenger();
+        if (service->getSizeCheckInQueue() > 0) {
+            service->checkInPassenger();
             
         }
-        if (service.getSizePasportControleQueue() > 0) {
-            service.PasportControlPassenger();
+        if (service->getSizePasportControleQueue() > 0) {
+            service->PasportControlPassenger();
             
         }
         if (*stop) {
@@ -76,8 +76,8 @@ int main() {
     ArrivingService arrivingService;
     
     bool stop = false;
-    std::thread depar(departing, std::ref(departingService), &stop);
-    std::thread arrived(arriving, std::ref(arrivingService), &stop);
+    std::thread depar(departing, &departingService, &stop);
+    std::thread arrived(arriving, &arrivingService, &stop);
 
 
     std::string comand = "help";

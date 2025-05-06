@@ -80,7 +80,7 @@ int DepartingPassenger::checkInPassenger() {
         baggageNow = con->getRes()->getInt("baggage");
     }
     else {
-        std::cout << "Passenger not found";
+        std::cout << "Passenger not found\n";
         status = -1;
         return 1;
     }
@@ -139,15 +139,17 @@ int DepartingPassenger::pasportControle() {
         return 1;
     } 
     if (con->getRes()->next()) {
-        std::string name = con->getRes()->getString("name");
-        std::string surname = con->getRes()->getString("surname");
-        std::string thirdname = con->getRes()->getString("thirdname");
-        if (name != this->name || surname != this->surname || thirdName != this->thirdName) {
+        std::string nameNew = con->getRes()->getString("name");
+        std::string surnameNew = con->getRes()->getString("surname");
+        std::string thirdnameNew = con->getRes()->getString("thirdname");
+    
+        if (nameNew != this->name || surnameNew != this->surname || thirdnameNew != this->thirdName) {
             status = -3;
+            return 1;
         }
     }
     else {
-        std::cout << "Passenger not found";
+        std::cout << "Passenger not found\n";
         status = -3;
         return 1;
     }
