@@ -28,7 +28,7 @@ void FlightsContainer::addFlight(Flight& F) {
 }
 
 int FlightsContainer::getSeatNumber(int flightNumber) {
-	for (Flight i : Flights) {
+	for (Flight &i : Flights) {
 		if (i.getNumber() == flightNumber) {
 			return i.getSeatNumber();
 		}
@@ -38,7 +38,7 @@ int FlightsContainer::getSeatNumber(int flightNumber) {
 
 
 int FlightsContainer::getStatAbroad(int flightNumber) {
-	for (Flight i : Flights) {
+	for (Flight &i : Flights) {
 		if (i.getNumber() == flightNumber) {
 			return i.getAbroadStat() ? 1 : 0;
 		}

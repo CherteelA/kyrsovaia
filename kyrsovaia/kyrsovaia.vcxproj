@@ -77,6 +77,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\include\jdbc;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\vs14;$(LibraryPath)</LibraryPath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -155,8 +156,10 @@
     <ClCompile Include="kyrsovaia.cpp" />
     <ClCompile Include="PassengerFactory.cpp" />
     <ClCompile Include="Flight.cpp" />
+    <ClCompile Include="TestBd.cpp" />
     <ClCompile Include="Status.cpp" />
     <ClCompile Include="TestData.cpp" />
+    <ClCompile Include="TetsFlight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DbConnector.h" />

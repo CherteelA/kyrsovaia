@@ -31,6 +31,9 @@
     <Filter Include="Исходные файлы\classes\status">
       <UniqueIdentifier>{04839601-aa42-4ae2-85dd-e3acd43c86a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\tests">
+      <UniqueIdentifier>{1892c955-d1fb-4127-a696-823278111216}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kyrsovaia.cpp">
@@ -62,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="Status.cpp">
       <Filter>Исходные файлы\classes\status</Filter>
+    </ClCompile>
+    <ClCompile Include="TestBd.cpp">
+      <Filter>Исходные файлы\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="TetsFlight.cpp">
+      <Filter>Исходные файлы\tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -73,6 +73,9 @@ void Status::printStatus() {
 				break;
 			case -4:
 				std::cout << "Рейс не найден";
+			default:
+				std::cout << "Статус: " << i->getStatus();
+				break;
 			}
 			std::cout << std::endl << std::endl;
 		}

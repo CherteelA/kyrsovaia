@@ -52,7 +52,7 @@ int ArrivingPassenger::checkInPassenger() {
     }
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
     std::string sql = "SELECT name, surname, thirdname, flightnumber FROM arrivedpassenger WHERE pasportData = '" + pasportData + "'";
-    con->request(std::move(sql));
+    con->request(std::move(sql), "airport");
     if (con->getRes() == nullptr) {
         status = -1;
         return 1;
@@ -101,7 +101,7 @@ int ArrivingPassenger::pasportControle() {
     abroad = true;
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
     std::string sql = "SELECT name, surname, thirdname FROM abroad WHERE pasportData = '" + pasportData + "'";
-    con->request(std::move(sql));
+    con->request(std::move(sql), "airport");
 
     if (con->getRes() == nullptr) {
         status = -3;

@@ -66,7 +66,7 @@ DbConnector::DbConnector(std::string&& host, std::string&& nameUsser, std::strin
 
 }
 
-void DbConnector::request(std::string&& sql) {
+void DbConnector::request(std::string&& sql, std::string &&dbName) {
     if (isConnect) {
         try {
             if (res != nullptr) {
@@ -77,7 +77,7 @@ void DbConnector::request(std::string&& sql) {
                 delete stmt;
                 stmt = nullptr;
             }
-            con->setSchema("airport");
+            con->setSchema(dbName);
             stmt = con->createStatement();
             if (sql[0] == 'S') {
                 res = stmt->executeQuery(sql);
@@ -103,38 +103,3 @@ bool DbConnector::getIsConnect() {
 }
 
 
-//try {
-//    sql::mysql::MySQL_Driver* driver = nullptr;
-//    sql::Connection* con = nullptr;
-//
-//
-//    driver = sql::mysql::get_mysql_driver_instance();
-//    con = driver->connect("tcp://127.0.0.1:3306", "root", "777809");
-//    con->setSchema("airport");
-//
-//    // Создаем statement для выполнения запросов
-//    sql::Statement* stmt = con->createStatement();
-//
-//    // Выполняем SELECT-запрос
-//    sql::ResultSet* res = stmt->executeQuery("SELECT * FROM passenger");
-//    while (res->next()) {
-//        // Извлекаем данные по именам столбцов
-//        int id = res->getInt("id");
-//        std::string name = res->getString("name");
-//        std::string surname = res->getString("surname");
-//        std::string thirdname = res->getString("thirdname");
-//        int flightNumber = res->getInt("flightnumber");
-//
-//        // Выводим данные на экран
-//        std::cout << "ID: " << id
-//            << ", Name: " << name
-//            << ", Surname: " << surname
-//            << ", Third Name: " << thirdname
-//            << ", Flight Number: " << flightNumber << std::endl;
-//    }
-//
-//    delete res;
-//}
-//catch (std::exception& e) {
-//    e.what();
-//}
