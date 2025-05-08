@@ -1,11 +1,9 @@
-﻿  TestBd.cpp
-C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\TestBd.cpp(22,1): warning C4129: "V": нераспознанная escape-последовательность символов
-C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\TestBd.cpp(62,1): warning C4129: "V": нераспознанная escape-последовательность символов
-  kyrsovaia.cpp
+﻿  Departing.cpp
   Создание кода
-  9 of 637 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Departing.cpp(94): warning C4715: DepartingPassenger::checkInPassenger: значение возвращается не при всех путях выполнения
+  1 of 637 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    32 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   kyrsovaia.vcxproj -> C:\Users\admin\source\repos\kyrsovaia\x64\Release\kyrsovaia.exe
   C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\libcrypto-3-x64.dll

@@ -77,28 +77,12 @@ public:
     std::string getName() override;
     std::string getSurname() override;
     std::string getThirdname() override;
-    int getTicketNumber() ; // Получение номера билета
-    int getSeatNumber() ; // Получение номера места
     int getNumberFlight() override;
-    int getNumberTicket() ;
     std::string getPasportData() override;
     int getStatus() override;
     bool getAbroadStatus() override;
     int getType() override;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -109,12 +93,10 @@ public:
 };
 
 
-
 class  CreatArrivingPassenger : public PassengerFactory {
 public:
     Passenger* createPassenger(std::string&& name, std::string&& surname, std::string&& thirdName, bool&& baggage, bool&& carryOn, std::string&& pasport);
 };
-
 
 
 class CreatDepartingPassenger : public PassengerFactory {
@@ -123,9 +105,5 @@ public:
 };
 
 
-
-
 void addTestData();
-
-
 #endif //KYRSOVAIA_PASSENGER_H

@@ -29,20 +29,8 @@ std::string DepartingPassenger::getThirdname() {
     return thirdName;
 }
 
-int DepartingPassenger::getTicketNumber() {
-    return numberTicket;
-}
-
-int DepartingPassenger::getSeatNumber() {
-    return numberSeat;
-}
-
 int DepartingPassenger::getNumberFlight() {
     return numberFlight;
-}
-
-int DepartingPassenger::getNumberTicket() {
-    return numberTicket;
 }
 
 std::string DepartingPassenger::getPasportData() {
@@ -73,11 +61,11 @@ int DepartingPassenger::checkInPassenger() {
         return 1;
     }
     
-    int baggageNow = 0;
+    int baggageStatus = 0;
     if (con->getRes()->next()) {
         this->numberFlight = con->getRes()->getInt("flightnumber");
         this->numberTicket = con->getRes()->getInt("numberTicket");
-        baggageNow = con->getRes()->getInt("baggage");
+        baggageStatus = con->getRes()->getInt("baggage");
     }
     else {
         std::cout << "Passenger not found\n";
@@ -86,7 +74,7 @@ int DepartingPassenger::checkInPassenger() {
     }
 
 
-    if (baggageNow == 0 && !baggage) {
+    if (baggageStatus == 0 && baggage) {
         status = -1;
         return 1;
     }

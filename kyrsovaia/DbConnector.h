@@ -33,7 +33,6 @@ public:
     void request(std::string &&sql,std::string&& tableName);
     sql::ResultSet* getRes();
     bool getIsConnect();
-    
 };
 
 

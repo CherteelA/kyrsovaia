@@ -122,6 +122,9 @@ int main() {
             stop = true;
             break;
         }
+        else if (comand == "cls" || comand == "clear") {
+            system("cls");
+        }
         else{
             std::cout << "Команда не распознана\n";
         }

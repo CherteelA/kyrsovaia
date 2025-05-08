@@ -128,7 +128,7 @@ void addTestData() {
 
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
-        \VALUES('Alexsey', 'Sitnikov', 'Pavlovch', '1419789345')";
+        \VALUES('Alexsey', 'Sitnikov', 'Pavlovich', '1419789345')";
     con->request(std::move(sql), "airport");
 
     sql = "INSERT INTO abroad(name, surname, thirdname, pasportData) \
