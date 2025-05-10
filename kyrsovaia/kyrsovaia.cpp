@@ -103,7 +103,7 @@ int main() {
 
     while (true) {
         if (comand == "help") {
-            std::cout << "ƒоступные команды:\nhelp просмотр доступных команд\nstatus просмотр статуса\ndeparting пассажир на вылет\narriving прилетевший пассажир\nexit выход\n\n";
+            std::cout << "ƒоступные команды:\nhelp просмотр доступных команд\nstatus просмотр статуса\ndeparting пассажир на вылет\narriving прилетевший пассажир\nflight добавить рейс\nshowFlights вывести все рейсы\nexit выход\n\n";
         }
         else if (comand == "status") {
             stat.printStatus();
@@ -137,6 +137,29 @@ int main() {
                     stat.addPassenger(ap);
                 }
             }
+        }
+        else if (comand == "flight") {
+            std::cout << "menu/flight ƒобавьте рейс, введите номер рейса, количество мест, 1 рейс за границу или 0 рейс внутри страны\nƒл€ выхода введите exit\n";
+          
+            std::string numb;
+            std::string size;
+            std::string abroadStatus;
+            FlightsContainer conteiner;
+            while(true) {
+                std::cout << "\t";
+                std::cin >> numb;
+                if (numb == "exit") {
+                    break;
+                }
+                std::cin >> size >> abroadStatus;
+
+                Flight newFlight(std::stoi(numb), std::stoi(size), abroadStatus == "1" ? true : false);
+                conteiner.addFlight(newFlight);
+            }
+        }
+        else if (comand == "showFlights") {
+            FlightsContainer conteiner;
+            conteiner.showFlights();
         }
         else if (comand == "exit") {
             stop = true;

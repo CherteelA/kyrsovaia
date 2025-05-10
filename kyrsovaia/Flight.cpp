@@ -1,7 +1,7 @@
 #include "Flight.h"
 
 
-std::vector<Flight> FlightsContainer::Flights;
+
 
 Flight::Flight(int numb, int seatsSize, bool setAbroad) : number(numb), maxSeats(seatsSize), seatIndex(1), abroad(setAbroad){
 	
@@ -22,8 +22,21 @@ bool Flight::getAbroadStat() {
 	return abroad;
 }
 
+void Flight::showData() {
+	std::cout << number << " " << maxSeats << " " << abroad << std::endl;
+}
+
+
+/*------------------------FlightsContainer---------------------------------------------------*/
+std::vector<Flight> FlightsContainer::Flights;
 
 void FlightsContainer::addFlight(Flight& F) {
+	for (Flight i : Flights) {
+		if (i.getNumber() == F.getNumber()) {
+			std::cout << "\nFlight number: " << F.getNumber() << " already\n";
+			return;
+		}
+	}
 	Flights.push_back(F);
 }
 
@@ -44,4 +57,10 @@ int FlightsContainer::getStatAbroad(int flightNumber) {
 		}
 	}
 	return -1;
+}
+
+void FlightsContainer::showFlights() {
+	for (Flight i : Flights) {
+		i.showData();
+	}
 }

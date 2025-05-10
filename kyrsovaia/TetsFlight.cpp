@@ -17,13 +17,11 @@ int testCreatFlight() {
 }
 
 int testFlightContainerGetAbroad() {
-    Flight f1(12312, 184, true);
     Flight f2(12421, 123, true);
     Flight f3(54365, 98, true);
 
     FlightsContainer con;
 
-    con.addFlight(f1);
     con.addFlight(f2);
     con.addFlight(f3);
 
