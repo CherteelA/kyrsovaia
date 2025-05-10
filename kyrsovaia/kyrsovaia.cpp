@@ -18,15 +18,21 @@ typedef struct title{
     std::string pasport;
 }title;
 
-title getData() {
-    std::cout << "¬ведите фио, 1 если есть багаж, 0 если нет, 1 если есть ручна€ кладь, 0 если нет, и паспортные данные\n";
+title getData(bool *flag) {
+    
     title temp;
-    std::cin >> temp.surname >> temp.name >> temp.thirdname;
-    int flag;
-    std::cin >> flag;
-    temp.baggage = flag == 1 ? true : false;
-    std::cin >> flag;
-    temp.carryOn = flag == 1 ? true : false;
+    std::cout << "\t";
+    std::cin >> temp.surname;
+    if (temp.surname == "exit") {
+        *flag = false;
+        return temp;
+    }
+    std::cin >> temp.name >> temp.thirdname;
+    int data;
+    std::cin >> data;
+    temp.baggage = data == 1 ? true : false;
+    std::cin >> data;
+    temp.carryOn = data == 1 ? true : false;
     std::cin >> temp.pasport;
     return temp;
 }
@@ -103,19 +109,33 @@ int main() {
             stat.printStatus();
         }
         else if (comand == "departing") {
-            title temp = getData();
-            passenger = factoryDeparting->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
-            if (DepartingPassenger* dp = dynamic_cast<DepartingPassenger*>(passenger)) {
-                departingService.addPassengber(dp);
-                stat.addPassenger(dp);
+            std::cout << "menu/departing ¬ведите фио, 1 если есть багаж, 0 если нет, 1 если есть ручна€ кладь, 0 если нет, и паспортные данные\n¬ведите exit дл€ выхода\n";
+            bool isEnter = true;
+            while (true) {
+                title temp = getData(&isEnter);
+                if (!isEnter) {
+                    break;
+                }
+                passenger = factoryDeparting->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
+                if (DepartingPassenger* dp = dynamic_cast<DepartingPassenger*>(passenger)) {
+                    departingService.addPassengber(dp);
+                    stat.addPassenger(dp);
+                }
             }
         }
         else if (comand == "arriving") {
-            title temp = getData();
-            passenger = factoryArriving->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
-            if (ArrivingPassenger* ap = dynamic_cast<ArrivingPassenger*>(passenger)) {
-                arrivingService.addPassengber(ap);
-                stat.addPassenger(ap);
+            std::cout << "menu/arriving ¬ведите фио, 1 если есть багаж, 0 если нет, 1 если есть ручна€ кладь, 0 если нет, и паспортные данные\n¬ведите exit дл€ выхода\n";
+            bool isEnter = true;
+            while (true) {
+                title temp = getData(&isEnter);
+                if (!isEnter) {
+                    break;
+                }
+                passenger = factoryArriving->createPassenger(std::move(temp.name), std::move(temp.surname), std::move(temp.thirdname), std::move(temp.baggage), std::move(temp.carryOn), std::move(temp.pasport));
+                if (ArrivingPassenger* ap = dynamic_cast<ArrivingPassenger*>(passenger)) {
+                    arrivingService.addPassengber(ap);
+                    stat.addPassenger(ap);
+                }
             }
         }
         else if (comand == "exit") {
@@ -128,7 +148,7 @@ int main() {
         else{
             std::cout << " оманда не распознана\n";
         }
-
+        std::cout << "menu/";
         std::cin >> comand;
 
     }

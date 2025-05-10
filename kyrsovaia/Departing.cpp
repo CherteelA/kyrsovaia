@@ -54,7 +54,7 @@ int DepartingPassenger::checkInPassenger() {
         return 1;
     }
     DbConnector* con = DbConnector::getInstance("tcp://127.0.0.1:3306", "root", "777809");
-    std::string sql = "SELECT flightnumber, numberTicket, baggage FROM passenger WHERE pasportData = '" + pasportData + "'";
+    std::string sql = "SELECT flightnumber, numberTicket, baggage, checkIn FROM passenger WHERE pasportData = '" + pasportData + "'";
     con->request(std::move(sql), "airport");
     if (con->getRes() == nullptr) {
         status = -1;
@@ -66,6 +66,16 @@ int DepartingPassenger::checkInPassenger() {
         this->numberFlight = con->getRes()->getInt("flightnumber");
         this->numberTicket = con->getRes()->getInt("numberTicket");
         baggageStatus = con->getRes()->getInt("baggage");
+        int checkStatus = con->getRes()->getInt("checkIn");
+        if (checkStatus == 1) {
+            status = -1;
+            return 1;
+        }
+        else {
+            
+            std::string sql = "UPDATE passenger SET checkIn = 1 WHERE pasportData = '" + pasportData + "'";
+            con->request(std::move(sql), "airport");
+        }
     }
     else {
         std::cout << "Passenger not found\n";

@@ -1,9 +1,8 @@
-﻿  Departing.cpp
+﻿  kyrsovaia.cpp
   Создание кода
-C:\Users\admin\source\repos\kyrsovaia\kyrsovaia\Departing.cpp(94): warning C4715: DepartingPassenger::checkInPassenger: значение возвращается не при всех путях выполнения
-  1 of 637 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  11 of 637 functions ( 1.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   kyrsovaia.vcxproj -> C:\Users\admin\source\repos\kyrsovaia\x64\Release\kyrsovaia.exe
   C:\Program Files\MySQL\mysql-connector-c++-9.2.0-winx64\lib64\libcrypto-3-x64.dll
