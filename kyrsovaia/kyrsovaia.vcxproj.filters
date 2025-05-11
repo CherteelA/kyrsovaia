@@ -34,6 +34,9 @@
     <Filter Include="Исходные файлы\tests">
       <UniqueIdentifier>{1892c955-d1fb-4127-a696-823278111216}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\classes\application">
+      <UniqueIdentifier>{5230c4e4-8cbd-4111-b06c-abf1b5f88095}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kyrsovaia.cpp">
@@ -72,6 +75,9 @@
     <ClCompile Include="TetsFlight.cpp">
       <Filter>Исходные файлы\tests</Filter>
     </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Исходные файлы\classes\application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Passenger.h">
@@ -87,6 +93,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Status.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

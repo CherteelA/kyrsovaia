@@ -33,7 +33,7 @@ std::vector<Flight> FlightsContainer::Flights;
 void FlightsContainer::addFlight(Flight& F) {
 	for (Flight i : Flights) {
 		if (i.getNumber() == F.getNumber()) {
-			std::cout << "\nFlight number: " << F.getNumber() << " already\n";
+			std::cout << "\tFlight number: " << F.getNumber() << " already\n";
 			return;
 		}
 	}

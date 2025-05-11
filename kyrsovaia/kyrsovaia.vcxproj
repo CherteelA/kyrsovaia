@@ -148,6 +148,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="Arriving.cpp" />
     <ClCompile Include="ArrivingService.cpp" />
     <ClCompile Include="DbConnector.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="TetsFlight.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
     <ClInclude Include="DbConnector.h" />
     <ClInclude Include="Flight.h" />
     <ClInclude Include="Passenger.h" />
